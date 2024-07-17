@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{
+    @apply bg-rose-50;
+    font-family: "Red Hat Text", sans-serif;
+    min-height: 100vh;
+  }
+
+  .b-product{
+    border: 2px solid red;
+    @apply rounded-md;
+  }
+
+  .btn-inc-dec{
+    border: 1px solid white;
+    @apply rounded-full
+  }
+}
+
+@layer components{
+  .gridSytem{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .gridSytem{
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+    }
+  }
+
+  .order-confirm{
+    top: 50px;
+  }
+}
