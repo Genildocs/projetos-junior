@@ -1,15 +1,15 @@
-import './style.css';
-import { data } from './data.js';
-import iconClose from './assets/images/icon-remove-item.svg';
-import iconCarbon from './assets/images/icon-carbon-neutral.svg';
-import iconCart from './assets/images/icon-add-to-cart.svg';
-import cokieImage from './assets/images/illustration-empty-cart.svg';
-import decrement from './assets/images/icon-decrement-quantity.svg';
-import increment from './assets/images/icon-increment-quantity.svg';
-import { addToCart, setupCounter, orderConfirm, confirmOrder } from './modules/index.js';
+import "./style.css";
+import { data } from "./data.js";
+import iconClose from "./assets/images/icon-remove-item.svg";
+import iconCarbon from "./assets/images/icon-carbon-neutral.svg";
+import iconCart from "./assets/images/icon-add-to-cart.svg";
+import cokieImage from "./assets/images/illustration-empty-cart.svg";
+import decrement from "./assets/images/icon-decrement-quantity.svg";
+import increment from "./assets/images/icon-increment-quantity.svg";
+import { addToCart, setupCounter } from "./modules/index.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('app').innerHTML = `
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("app").innerHTML = `
     <div class="md:px-12 md:py-10">    
     <div class="md:flex md:gap-5 ">
     <div id="container-products" class="z-10 relative">
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
              </div>
              `;
            })
-           .join(' ')}
+           .join(" ")}
     </div>  
     </div>
     <div class="p-7 mt-5 md:mt-0 rounded-md md:w-[500px] bg-white md:self-start mb-5">
@@ -100,18 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
     `;
 
-  const btnCart = document.getElementsByClassName('btnCart');
-  const productList = document.getElementsByClassName('imgProd');
-  const btnDecrement = document.getElementsByClassName('btnDecrement');
-  const btnIncrement = document.getElementsByClassName('btnIncrement');
-  const counter = document.getElementsByClassName('counter');
-  const containerBtn = document.getElementsByClassName('container-btn');
-  const productAdd = document.getElementsByClassName('productAdd');
-  const cart = document.getElementsByClassName('cart');
-  const totalItemsCart = document.getElementById('totalItemsCart');
-  const description = document.querySelectorAll('.description');
-  const orderImage = document.getElementsByClassName('order-img');
-  const containerOrders = document.getElementsByClassName('container-orders');
+  const btnCart = document.getElementsByClassName("btnCart");
+  const productList = document.getElementsByClassName("imgProd");
+  const btnDecrement = document.getElementsByClassName("btnDecrement");
+  const btnIncrement = document.getElementsByClassName("btnIncrement");
+  const counter = document.getElementsByClassName("counter");
+  const containerBtn = document.getElementsByClassName("container-btn");
+  const productAdd = document.getElementsByClassName("productAdd");
+  const cart = document.getElementsByClassName("cart");
+  const totalItemsCart = document.getElementById("totalItemsCart");
+  const description = document.querySelectorAll(".description");
+  const orderImage = document.getElementsByClassName("order-img");
+  const containerOrders = document.getElementsByClassName("container-orders");
   const cartItems = {};
 
   //functions
@@ -142,6 +142,4 @@ document.addEventListener('DOMContentLoaded', () => {
     orderImage,
     containerOrders
   );
-  orderConfirm();
-  confirmOrder(document.getElementById('btnConfirm'));
 });

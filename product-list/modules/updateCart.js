@@ -1,5 +1,5 @@
 import iconClose from "../assets/images/icon-remove-item.svg";
-import { elementsCart } from "./orderConfirm.js";
+
 
 function updateCart(cartItems, cart, itemName) {
   const totalItemsCart = document.getElementById("totalItemsCart");
