@@ -8,5 +8,14 @@
   body {
     font-family: 'Commissioner', sans-serif;
     min-height: 100vh;
+    background-image: url("./assets/images/image-hero-mobile.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 640px){
+    body{
+      background-image: url("./assets/images/image-hero-desktop.jpg");
+    }
   }
 }
