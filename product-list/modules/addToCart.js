@@ -1,9 +1,15 @@
 import {updateCart} from "./updateCart.js";
+import pkg from 'lodash';
+import {forEach} from "lodash";
 
 function addToCart(btnCart, productList, productAdd, containerBtn, counter, cartItems, cart, description, orderImage, containerOrders){
 
     Array.from(btnCart).forEach((item, index)=>{
+        let itemCart = Array.from(document.querySelectorAll("#container-" + index));
 
+        forEach(itemCart, (item)=>{
+            console.log(item[container] )
+        })
         item.addEventListener('click', function (){
             productList[index].classList.add('b-product')
             btnCart[index].classList.add('hidden')

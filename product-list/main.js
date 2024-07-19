@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>    
     <div class="gridSytem " id="main">    
          ${data
-           .map((item) => {
+           .map((item, index) => {
              return `
-              <div class="relative">
+              <div class="relative" id='container-${index}'>
                 <div class="mb-3 imgProd ">
                 <div class=" sm:hidden">
                     <img src=${item.image.mobile} class="rounded-md cursor-pointer" /> 
@@ -113,6 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderImage = document.getElementsByClassName("order-img");
   const containerOrders = document.getElementsByClassName("container-orders");
   const cartItems = {};
+
+  const containerItems = document.querySelectorAll('#container-2');
 
   //functions
   addToCart(
