@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <img src=${Logo} alt="Logotipo" />
     <div id="list-menu"></div>
   </header>
+
+  <main id="main" class="md:flex justify-center">
+    <div id="content" class="bg-white mx-3 mt-[10rem] rounded-md p-5 md:w-[600px] "></div>
+  </main>
 `;
 
   addListHtml();

@@ -22,7 +22,7 @@
 
 @layer components {
   #app {
-    @apply sm:max-w-[1440px] sm:w-full sm:my-0 sm:mx-auto;
+    @apply sm:max-w-[1440px] sm:w-full sm:my-0 sm:mx-auto ;
   }
 
   #list-menu {
