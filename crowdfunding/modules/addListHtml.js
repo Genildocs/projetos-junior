@@ -1,13 +1,15 @@
+import iconHamburger from '../assets/images/icon-hamburger.svg'
+import iconClose from '../assets/images/icon-close-menu.svg'
 function addListHtml() {
   const listMenu = document.getElementById("list-menu");
 
   const listItems = ["About", "Discover", "Get Started"];
   const list = document.createElement("ul");
   const btnClose = document.createElement("button");
-  btnClose.innerHTML = `<img src="/assets/images/icon-hamburger.svg" alt="icon format hamburger" />`;
+  btnClose.innerHTML = `<img src=${iconHamburger} alt="icon format hamburger" />`;
   btnClose.id = "btn-close";
   const btnOpen = document.createElement("button");
-  btnOpen.innerHTML = `<img src="/assets/images/icon-close-menu.svg" alt="icon format close" />`;
+  btnOpen.innerHTML = `<img src=${iconClose} alt="icon format close" />`;
   btnOpen.id = "btn-open";
   btnOpen.className = "hidden";
   list.className = "sm:flex flex-col sm:flex-row gap-5 hidden ";
@@ -16,7 +18,9 @@ function addListHtml() {
     .map((item, idx) => {
       return `<li id="item-${idx}" class="text-black sm:text-white font-semibold flex">
                 <a href="#">${item}</a>  
-              </li>`;
+              </li>
+              <hr/>  
+            `;
     })
     .join(" ");
   listMenu.appendChild(btnClose);
@@ -24,17 +28,21 @@ function addListHtml() {
   listMenu.appendChild(btnClose);
   listMenu.appendChild(list);
 
-  btnClose.addEventListener("click", () => {
+  function closeMenu(){
     list.classList.toggle("!flex");
     btnClose.classList.toggle("hidden");
     btnOpen.classList.remove("hidden");
-  });
+  }
 
-  btnOpen.addEventListener("click", () => {
+  function openMenu(){
     list.classList.toggle("!flex");
     btnClose.classList.remove("hidden");
     btnOpen.classList.add("hidden");
-  });
+  }
+
+
+  btnClose.addEventListener("click", closeMenu);
+  btnOpen.addEventListener("click", openMenu);
 }
 
 export { addListHtml };

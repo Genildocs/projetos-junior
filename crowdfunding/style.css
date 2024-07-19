@@ -18,6 +18,14 @@
       background-image: url("./assets/images/image-hero-desktop.jpg");
     }
   }
+
+  hr:last-child{
+    display: none;
+  }
+
+  hr{
+    @apply sm:hidden
+  }
 }
 
 @layer components {
@@ -40,4 +48,6 @@
   #menu {
     @apply bg-white sm:bg-transparent w-[calc(375px-36px)] sm:w-full  p-5 sm:p-0 absolute top-[4.5rem] sm:top-0  left-3 sm:left-0 rounded-md sm:relative;
   }
+
 }
+
