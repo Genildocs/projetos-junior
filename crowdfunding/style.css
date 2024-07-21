@@ -33,10 +33,6 @@
     @apply sm:max-w-[1440px] sm:w-full sm:my-0 sm:mx-auto;
   }
 
-  #list-menu {
-    transition: all 0.5s ease-in-out;
-  }
-
   #btn-open {
     @apply sm:hidden;
   }

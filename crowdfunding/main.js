@@ -19,10 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
           <h1 class="text-2xl font-bold mb-5 text-center">Mastercraft Bamboo Monitor Riser</h1>
           <p class="text-center text-gray-500">A beautiful handcrafted monitor stand to reduce neck and eye strain.</p>
         </div>
-        <div class="flex items-center  mt-5">
+        <div class="flex items-center  mt-5 sm:justify-between">
           <button class="bg-moderate-cyan py-3 px-8 rounded-3xl text-white mr-3 hover:bg-dark-cyan ">Back this project</button>
-          <button >
+          <button class="sm:flex items-center gap-5">
             <img src=${iconBookmark} alt="icon bookmark" />
+            <p class="font-semibold text-gray-500 hidden sm:block">Bookmark</p>
           </button>
         </div>
     </div>
