@@ -19,18 +19,18 @@
     }
   }
 
-  hr:last-child{
+  hr:last-child {
     display: none;
   }
 
-  hr{
-    @apply sm:hidden
+  hr {
+    @apply sm:hidden;
   }
 }
 
 @layer components {
   #app {
-    @apply sm:max-w-[1440px] sm:w-full sm:my-0 sm:mx-auto ;
+    @apply sm:max-w-[1440px] sm:w-full sm:my-0 sm:mx-auto;
   }
 
   #list-menu {
@@ -48,6 +48,4 @@
   #menu {
     @apply bg-white sm:bg-transparent w-[calc(375px-36px)] sm:w-full  p-5 sm:p-0 absolute top-[4.5rem] sm:top-0  left-3 sm:left-0 rounded-md sm:relative;
   }
-
 }
-
