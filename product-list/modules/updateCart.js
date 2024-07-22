@@ -1,11 +1,13 @@
-import iconClose from "../assets/images/icon-remove-item.svg";
-
+import iconClose from '../assets/images/icon-remove-item.svg';
 
 function updateCart(cartItems, cart, itemName) {
-  const totalItemsCart = document.getElementById("totalItemsCart");
-  const totalCart = document.getElementById("totalCart");
+  const totalItemsCart = document.getElementById('totalItemsCart');
+  const totalCart = document.getElementById('totalCart');
+  const modalValues = document.getElementById('modal-values');
+  console.log(modalValues, totalCart);
 
-  cart[0].innerHTML = "";
+  cart[0].innerHTML = '';
+  modalValues.innerHTML = '';
   let sum = 0;
   let acc = 0;
   for (let [itemName, item] of Object.entries(cartItems)) {
@@ -13,7 +15,7 @@ function updateCart(cartItems, cart, itemName) {
     totalItemsCart.textContent = sum || 0;
 
     const valueCart =
-      parseFloat(item.price.replace("$", "")) * parseFloat(item.quantity);
+      parseFloat(item.price.replace('$', '')) * parseFloat(item.quantity);
     let total = (acc += valueCart);
     if (total) {
       totalCart.textContent = `$${total.toFixed(2)}`;
@@ -39,9 +41,16 @@ function updateCart(cartItems, cart, itemName) {
        </div>
      </div>         
  `;
+    console.log(cartItems);
+    modalValues.innerHTML += `
+    <div>
+      <p class="font-semibold">${itemName}</p>
+    </div>
+      
+    `;
   }
 
-  const btnRemove = document.getElementsByClassName("btnRemove");
+  const btnRemove = document.getElementsByClassName('btnRemove');
   function removeItem(itemNameId, cartItems, cart, itemName) {
     removeElement(cartItems[itemNameId].idx);
     delete cartItems[itemNameId];
@@ -51,32 +60,32 @@ function updateCart(cartItems, cart, itemName) {
   }
 
   function atualizeItemsCart() {
-    const containerOrders = document.getElementsByClassName("container-orders");
-    const orderImage = document.getElementsByClassName("order-img");
-    if (totalItemsCart.textContent === "0") {
-      containerOrders[0].classList.add("hidden");
-      orderImage[0].classList.remove("hidden");
+    const containerOrders = document.getElementsByClassName('container-orders');
+    const orderImage = document.getElementsByClassName('order-img');
+    if (totalItemsCart.textContent === '0') {
+      containerOrders[0].classList.add('hidden');
+      orderImage[0].classList.remove('hidden');
     }
   }
 
   Array.from(btnRemove).forEach((item, index) => {
-    btnRemove[index].addEventListener("click", function () {
-      const itemNameId = this.getAttribute("data-item");
+    btnRemove[index].addEventListener('click', function () {
+      const itemNameId = this.getAttribute('data-item');
       removeItem(itemNameId, cartItems, cart, itemName);
     });
   });
 }
 
 function removeElement(index) {
-  const btnCart = document.getElementsByClassName("btnCart");
-  const productAdd = document.getElementsByClassName("productAdd");
-  const containerBtn = document.getElementsByClassName("container-btn");
-  const productList = document.getElementsByClassName("imgProd");
+  const btnCart = document.getElementsByClassName('btnCart');
+  const productAdd = document.getElementsByClassName('productAdd');
+  const containerBtn = document.getElementsByClassName('container-btn');
+  const productList = document.getElementsByClassName('imgProd');
 
-  btnCart[index].classList.remove("hidden");
-  productAdd[index].classList.add("hidden");
-  containerBtn[index].classList.remove("!bg-red-600");
-  productList[index].classList.remove("b-product");
+  btnCart[index].classList.remove('hidden');
+  productAdd[index].classList.add('hidden');
+  containerBtn[index].classList.remove('!bg-red-600');
+  productList[index].classList.remove('b-product');
 }
 
 export { updateCart };
