@@ -8,7 +8,7 @@ import decrement from './assets/images/icon-decrement-quantity.svg';
 import increment from './assets/images/icon-increment-quantity.svg';
 import { addToCart, setupCounter } from './modules/index.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+
   document.getElementById('app').innerHTML = `
     <div class="md:mx-12 md:my-10">
     <div id="modal" class="bg-white p-5">
@@ -105,46 +105,29 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
     `;
 
-  const btnCart = document.getElementsByClassName('btnCart');
-  const productList = document.getElementsByClassName('imgProd');
+
+
   const btnDecrement = document.getElementsByClassName('btnDecrement');
   const btnIncrement = document.getElementsByClassName('btnIncrement');
   const counter = document.getElementsByClassName('counter');
-  const containerBtn = document.getElementsByClassName('container-btn');
-  const productAdd = document.getElementsByClassName('productAdd');
   const cart = document.getElementsByClassName('cart');
-  const totalItemsCart = document.getElementById('totalItemsCart');
   const description = document.querySelectorAll('.description');
-  const orderImage = document.getElementsByClassName('order-img');
-  const containerOrders = document.getElementsByClassName('container-orders');
   const cartItems = {};
 
   //functions
+
   addToCart(
-    btnCart,
-    productList,
-    productAdd,
-    containerBtn,
-    counter,
-    cartItems,
-    cart,
-    description,
-    orderImage,
-    containerOrders,
-    totalItemsCart
+      counter,
+      cartItems,
+      cart,
+      description,
   );
   setupCounter(
-    btnDecrement,
-    btnIncrement,
-    counter,
-    cartItems,
-    description,
-    cart,
-    btnCart,
-    containerBtn,
-    productAdd,
-    productList,
-    orderImage,
-    containerOrders
+      btnDecrement,
+      btnIncrement,
+      counter,
+      cartItems,
+      description,
+      cart,
   );
-});
+

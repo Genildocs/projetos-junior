@@ -1,37 +1,20 @@
-import { updateCart } from './updateCart.js';
-
-function addToCart(
-  btnCart,
-  productList,
-  productAdd,
-  containerBtn,
-  counter,
-  cartItems,
-  cart,
-  description,
-  orderImage,
-  containerOrders
-) {
+import { updateCart } from "./updateCart.js";
+const { controlDisplay } = await import("./controlDisplay.js");
+function addToCart(counter, cartItems, cart, description) {
   Array.from(btnCart).forEach((item, index) => {
-    item.addEventListener('click', function () {
-      productList[index].classList.add('b-product');
-      btnCart[index].classList.add('hidden');
-      productAdd[index].classList.remove('hidden');
-      containerBtn[index].classList.add('!bg-red-600');
-      orderImage[0].classList.add('hidden');
-      containerOrders[0].classList.remove('hidden');
+    item.addEventListener("click", function () {
+      controlDisplay(index);
       parseInt((counter[index].textContent = 1));
       let itemName =
-        description[index].getElementsByTagName('p')[0].textContent;
+        description[index].getElementsByTagName("p")[0].textContent;
       let itemPrice =
-        description[index].getElementsByTagName('p')[1].textContent;
+        description[index].getElementsByTagName("p")[1].textContent;
       cartItems[itemName] = {
         name: itemName,
         quantity: 1,
         price: itemPrice,
         idx: index,
       };
-
       updateCart(cartItems, cart, itemName);
     });
   });

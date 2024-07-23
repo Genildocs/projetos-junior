@@ -1,10 +1,10 @@
 import iconClose from '../assets/images/icon-remove-item.svg';
-
+const {removeElement} = await import('./controlDisplay.js')
 function updateCart(cartItems, cart, itemName) {
   const totalItemsCart = document.getElementById('totalItemsCart');
   const totalCart = document.getElementById('totalCart');
   const modalValues = document.getElementById('modal-values');
-  console.log(modalValues, totalCart);
+
 
   cart[0].innerHTML = '';
   modalValues.innerHTML = '';
@@ -60,12 +60,7 @@ function updateCart(cartItems, cart, itemName) {
   }
 
   function atualizeItemsCart() {
-    const containerOrders = document.getElementsByClassName('container-orders');
-    const orderImage = document.getElementsByClassName('order-img');
-    if (totalItemsCart.textContent === '0') {
-      containerOrders[0].classList.add('hidden');
-      orderImage[0].classList.remove('hidden');
-    }
+    removeElement()
   }
 
   Array.from(btnRemove).forEach((item, index) => {
@@ -76,16 +71,6 @@ function updateCart(cartItems, cart, itemName) {
   });
 }
 
-function removeElement(index) {
-  const btnCart = document.getElementsByClassName('btnCart');
-  const productAdd = document.getElementsByClassName('productAdd');
-  const containerBtn = document.getElementsByClassName('container-btn');
-  const productList = document.getElementsByClassName('imgProd');
 
-  btnCart[index].classList.remove('hidden');
-  productAdd[index].classList.add('hidden');
-  containerBtn[index].classList.remove('!bg-red-600');
-  productList[index].classList.remove('b-product');
-}
 
 export { updateCart };
