@@ -27,7 +27,6 @@ function addListHtml() {
     .join(" ");
   listMenu.appendChild(btnClose);
   listMenu.appendChild(btnOpen);
-  listMenu.appendChild(btnClose);
   listMenu.appendChild(list);
 
   function closeMenu() {
@@ -35,6 +34,7 @@ function addListHtml() {
     list.classList.toggle("!flex");
     btnClose.classList.toggle("hidden");
     btnOpen.classList.remove("hidden");
+    document.getElementById("overlay").classList.remove("hidden");
   }
 
   function openMenu() {
@@ -42,6 +42,7 @@ function addListHtml() {
     list.classList.toggle("!flex");
     btnClose.classList.remove("hidden");
     btnOpen.classList.add("hidden");
+    document.getElementById("overlay").classList.add("hidden");
   }
 
   btnClose.addEventListener("click", closeMenu);

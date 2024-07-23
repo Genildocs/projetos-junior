@@ -3,11 +3,12 @@ import Logo from "/assets/images/logo.svg";
 import iconBookmark from "./assets/images/icon-bookmark.svg";
 import logoMastercraft from "./assets/images/logo-mastercraft.svg";
 import { addListHtml } from "./modules/addListHtml.js";
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("#app").innerHTML = `
-  <header class="flex items-center justify-between h-[10vh] px-3 relative lg:px-12">
-    <img src=${Logo} alt="Logotipo" />
-    <div id="list-menu"></div>
+
+document.querySelector("#app").innerHTML = `
+  <header class="flex items-center justify-between h-[10vh] px-3 relative lg:px-12 ">
+    <img src=${Logo} alt="Logotipo" class="z-50" />
+    <div id="list-menu" class="z-50"></div>
+    <div id="overlay" class="hidden"></div>
   </header>
 
   <main id="main" class="md:flex justify-center">
@@ -30,5 +31,4 @@ document.addEventListener("DOMContentLoaded", () => {
   </main>
 `;
 
-  addListHtml();
-});
+addListHtml();

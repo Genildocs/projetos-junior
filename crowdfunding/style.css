@@ -20,7 +20,7 @@
   }
 
   hr:last-child {
-    display: none;
+    @apply hidden;
   }
 
   hr {
@@ -42,6 +42,11 @@
   }
 
   #menu {
-    @apply bg-white sm:bg-transparent w-[calc(375px-36px)] sm:w-full  p-5 sm:p-0 absolute top-[4.5rem] sm:top-0  left-3 sm:left-0 rounded-md sm:relative;
+    @apply bg-white sm:bg-transparent w-[calc(375px-36px)] sm:w-full  p-5 sm:p-0 absolute top-[4.5rem] sm:top-0  left-3 sm:left-0 rounded-md sm:relative z-50;
+  }
+
+  #overlay {
+    @apply z-10 absolute top-0 left-0 w-full h-full bg-black opacity-50;
+    min-height: 100vh;
   }
 }
