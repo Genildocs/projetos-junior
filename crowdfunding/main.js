@@ -1,10 +1,10 @@
-import "./style.css";
-import Logo from "/assets/images/logo.svg";
-import iconBookmark from "./assets/images/icon-bookmark.svg";
-import logoMastercraft from "./assets/images/logo-mastercraft.svg";
-import { addListHtml } from "./modules/addListHtml.js";
+import './style.css';
+import Logo from '/assets/images/logo.svg';
+import iconBookmark from './assets/images/icon-bookmark.svg';
+import logoMastercraft from './assets/images/logo-mastercraft.svg';
+import { addListHtml } from './modules/addListHtml.js';
 
-document.querySelector("#app").innerHTML = `
+document.querySelector('#app').innerHTML = `
   <header class="flex items-center justify-between h-[10vh] px-3 relative lg:px-12 ">
     <img src=${Logo} alt="Logotipo" class="z-50" />
     <div id="list-menu" class="z-50"></div>
