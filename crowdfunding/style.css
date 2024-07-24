@@ -48,4 +48,13 @@
     @apply z-10 absolute top-0 left-0 w-0 h-full bg-black opacity-50 min-h-screen sm:hidden;
     transition: all 0.5s ease-in-out;
   }
+
+  #card-0,
+  #card-1 {
+    @apply mb-6;
+  }
+
+  #card-2 {
+    @apply grayscale opacity-50;
+  }
 }
