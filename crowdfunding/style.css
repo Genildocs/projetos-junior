@@ -40,10 +40,12 @@
   }
 
   #menu {
-    @apply bg-white sm:bg-transparent w-[calc(375px-36px)] sm:w-full  p-5 sm:p-0 absolute top-[4.5rem] sm:top-0  left-3 sm:left-0 rounded-md sm:relative z-50;
+    @apply bg-white sm:bg-transparent w-[calc(375px-36px)] sm:w-full  p-5 sm:p-0 absolute top-[4.5rem] sm:top-0  left-3 sm:left-0 rounded-md sm:relative z-50 flex sm:flex flex-col sm:flex-row gap-5 sm:opacity-100 sm:visible;
+    transition: all 0.8s ease-in-out;
   }
 
   #overlay {
-    @apply z-10 absolute top-0 left-0 w-full h-full bg-black opacity-50 min-h-screen sm:hidden;
+    @apply z-10 absolute top-0 left-0 w-0 h-full bg-black opacity-50 min-h-screen sm:hidden;
+    transition: all 0.5s ease-in-out;
   }
 }

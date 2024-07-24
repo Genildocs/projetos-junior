@@ -13,8 +13,7 @@ function addListHtml() {
   btnOpen.innerHTML = `<img src=${iconClose} alt="icon format close" />`;
   btnOpen.id = 'btn-open';
   btnOpen.className = 'hidden';
-  list.className =
-    'sm:flex flex-col sm:flex-row gap-5 hidden transition-all duration-500';
+  list.className = 'opacity-0 invisible ';
   list.id = 'menu';
   list.innerHTML = listItems
     .map((item, idx) => {
@@ -31,10 +30,11 @@ function addListHtml() {
 
   function eventToogle() {
     document.body.classList.toggle('overflow-hidden');
-    list.classList.toggle('!flex');
     btnClose.classList.toggle('hidden');
     btnOpen.classList.toggle('hidden');
-    document.getElementById('overlay').classList.toggle('hidden');
+    document.getElementById('overlay').classList.toggle('!w-full');
+    list.classList.toggle('opacity-0');
+    list.classList.toggle('invisible');
   }
 
   btnClose.addEventListener('click', eventToogle);
