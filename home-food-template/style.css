@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 /*
 google fontes
@@ -18,14 +18,12 @@ font-family: "Source Sans 3", sans-serif;
 
 @layer components {
   #section-home {
-    @apply bg-[url('./assets/image-1.jpg')];
+    @apply bg-[url('./assets/image-1.jpg')] bg-no-repeat bg-cover;
     background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   #section-home p {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     margin-right: 127px;
     margin-top: 27px;
   }

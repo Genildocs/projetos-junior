@@ -1,7 +1,13 @@
 const objectCards = [
   {
+    title: 'Pledge with no reward',
+    text:
+      'Choose to support us without a reward if you simply believe in our project. As a backer, \n' +
+      '  you will be signed up to receive product updates via email.',
+  },
+  {
     title: 'Bamboo Stand',
-    value: 'Piedge $25 or more',
+    value: 'Pledge $25 or more',
     text:
       "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and \n" +
       '  you’ll be added to a special Backer member list.',
@@ -29,6 +35,7 @@ const objectCards = [
   },
 ];
 
+
 function cardsPlan() {
   const card = document.getElementById('cards');
   const cardsPlanHtml = document.createElement('div');
@@ -36,11 +43,15 @@ function cardsPlan() {
     .map((item, index) => {
       return `
 			<div id=card-${index}  class="border-2 border-solid border-gray-300 rounded-md p-5">
-				<p class="font-bold">${item.title}</p>
-				<p>${item.value}</p>
-				<p class="text-gray-500">${item.text}</p>
-				<p class="font-bold text-2xl">${item.quatity} <span class="font-normal text-gray-500 text-[16px]">left</span></p>
-				<button class="bg-moderate-cyan py-3 px-8 rounded-3xl font-semibold text-white mr-3 hover:bg-dark-cyan ">${item.nameBtn}</button>
+              <div class="sm:flex justify-between items-center sm:mb-5"> 
+                   <p class="font-bold">${item.title}</p>
+                   <p class="text-dark-cyan font-semibold">${item.value}</p>
+              </div>				
+                  <p class="text-gray-500 mb-5">${item.text}</p>
+              <div class="sm:flex justify-between items-center"> 
+                  <p class="font-bold text-2xl">${item.quatity} <span class="font-normal text-gray-500 text-[16px]">left</span></p>
+                  <button class="bg-moderate-cyan py-3 px-8 rounded-3xl font-semibold text-white mr-3 hover:bg-dark-cyan ">${item.nameBtn}</button>
+              </div>					
 			</div>
 		`;
     })
@@ -48,4 +59,38 @@ function cardsPlan() {
   card.appendChild(cardsPlanHtml);
 }
 
-export { cardsPlan };
+function modal(){
+  const modal = document.getElementById('modal')
+  const btnProject = document.getElementById('btnProject');
+  const cardToModal = document.createElement('div')
+  cardToModal.innerHTML = objectCards.map((el, index)=>{
+    return `
+        <div id="card-modal-${index}" class="cursor-pointer ">
+        <div class="border-2 border-solid border-gray-300 rounded-md p-5"> 
+           <div class="flex justify-between items-center mb-5"> 
+              <button id="selectModal"></button>  
+              <p class="font-bold">${el.title}</p>                   
+          </div>				
+              <p class="text-gray-500 mb-5">${el.text}</p>  
+              <p id="card-value" class="font-bold text-2xl">${el.quatity} <span class="font-normal text-gray-500 text-[16px]">left</span></p>
+        </div>                     			
+        </div> `
+  }).join(' ')
+
+  modal.appendChild(cardToModal)
+  eventModal(btnProject, modal)
+}
+
+function eventModal(button, modal){
+  const closeModal = document.getElementById('closeModal')
+
+  button.addEventListener('click', () => {
+      modal.classList.toggle('hidden')
+  });
+
+  closeModal.addEventListener('click',()=>{
+    modal.classList.toggle('hidden')
+  })
+}
+
+export { cardsPlan, modal };
