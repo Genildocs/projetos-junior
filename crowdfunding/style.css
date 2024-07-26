@@ -49,7 +49,7 @@
     transition: all 0.5s ease-in-out;
   }
 
-  #card-0{
+  #card-0 {
     @apply hidden;
   }
 
@@ -59,44 +59,41 @@
   }
 
   #card-3 {
-    @apply  opacity-50;
+    @apply opacity-50;
   }
 
-  #card-3  button {
-    @apply  bg-black;
+  #card-3 button {
+    @apply bg-black;
   }
 
   #card-modal-0,
   #card-modal-1,
-  #card-modal-2{
+  #card-modal-2 {
     @apply mb-6;
   }
 
-
-  #card-modal-2 div:hover{
-    border: 2px solid darkcyan;
-  }
-
-  #card-modal-2 div:focus{
-    outline: none;
-    border: 2px solid darkcyan;
-    background: darkcyan;
-  }
-
-  #card-modal-0  #card-value{
+  #card-modal-0 #card-value {
     @apply hidden;
   }
 
-  #modal{
+  #card-modal-0 #card-quantity {
+    @apply hidden;
+  }
+
+  #modal {
     position: absolute;
     top: -100px;
     z-index: 999;
   }
 
-  #selectModal{
+  #selectModal {
     border: 1px solid black;
     padding: 10px;
     border-radius: 50%;
-    @apply hover:bg-cyan-500
+    @apply hover:bg-cyan-500;
+  }
+
+  input[type='radio'] {
+    accent-color: red;
   }
 }

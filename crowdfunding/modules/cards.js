@@ -35,7 +35,6 @@ const objectCards = [
   },
 ];
 
-
 function cardsPlan() {
   const card = document.getElementById('cards');
   const cardsPlanHtml = document.createElement('div');
@@ -59,38 +58,44 @@ function cardsPlan() {
   card.appendChild(cardsPlanHtml);
 }
 
-function modal(){
-  const modal = document.getElementById('modal')
+function modal() {
+  const modal = document.getElementById('modal');
   const btnProject = document.getElementById('btnProject');
-  const cardToModal = document.createElement('div')
-  cardToModal.innerHTML = objectCards.map((el, index)=>{
-    return `
+  const cardToModal = document.createElement('div');
+  cardToModal.innerHTML = objectCards
+    .map((el, index) => {
+      return `
         <div id="card-modal-${index}" class="cursor-pointer ">
         <div class="border-2 border-solid border-gray-300 rounded-md p-5"> 
-           <div class="flex justify-between items-center mb-5"> 
-              <button id="selectModal"></button>  
-              <p class="font-bold">${el.title}</p>                   
-          </div>				
+           <div class="flex items-center mb-5 gap-5"> 
+<!--              <button id="selectModal"></button>-->
+                <input type="radio" id="selectModal" class="h-6 w-6 " name="radioModal"/>
+              <div> 
+                <p class="font-bold">${el.title}</p> 
+                <p id="card-value" class="text-dark-cyan font-semibold">${el.value}</p> 
+              </div>
+        </div>               				
               <p class="text-gray-500 mb-5">${el.text}</p>  
-              <p id="card-value" class="font-bold text-2xl">${el.quatity} <span class="font-normal text-gray-500 text-[16px]">left</span></p>
+              <p id="card-quantity" class="font-bold text-2xl">${el.quatity} <span class="font-normal text-gray-500 text-[16px]">left</span></p>
         </div>                     			
-        </div> `
-  }).join(' ')
+        </div> `;
+    })
+    .join(' ');
 
-  modal.appendChild(cardToModal)
-  eventModal(btnProject, modal)
+  modal.appendChild(cardToModal);
+  eventModal(btnProject, modal);
 }
 
-function eventModal(button, modal){
-  const closeModal = document.getElementById('closeModal')
+function eventModal(openModal, modal) {
+  const closeModal = document.getElementById('closeModal');
 
-  button.addEventListener('click', () => {
-      modal.classList.toggle('hidden')
+  openModal.addEventListener('click', () => {
+    modal.classList.toggle('hidden');
   });
 
-  closeModal.addEventListener('click',()=>{
-    modal.classList.toggle('hidden')
-  })
+  closeModal.addEventListener('click', () => {
+    modal.classList.toggle('hidden');
+  });
 }
 
 export { cardsPlan, modal };
