@@ -69,7 +69,7 @@ function modal() {
         <div class="border-2 border-solid border-gray-300 rounded-md p-5"> 
            <div class="flex items-center mb-5 gap-5"> 
 <!--              <button id="selectModal"></button>-->
-                <input type="radio" id="selectModal" class="h-6 w-6 " name="radioModal"/>
+                <input type="radio" id="selectModal" class="h-5 w-5 " name="radioModal"/>
               <div> 
                 <p class="font-bold">${el.title}</p> 
                 <p id="card-value" class="text-dark-cyan font-semibold">${el.value}</p> 

@@ -86,14 +86,10 @@
     z-index: 999;
   }
 
-  #selectModal {
+  /* #selectModal {
     border: 1px solid black;
     padding: 10px;
     border-radius: 50%;
     @apply hover:bg-cyan-500;
-  }
-
-  input[type='radio'] {
-    accent-color: red;
-  }
+  } */
 }
